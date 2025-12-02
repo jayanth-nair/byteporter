@@ -22,6 +22,7 @@ const FileUpload = () => {
     const [userQuotaMB, setUserQuotaMB] = useState(null);
     const [storageUsedMB, setStorageUsedMB] = useState(0);
     const [effectiveMaxFileSizeMB, setEffectiveMaxFileSizeMB] = useState(5);
+    const [clientUrl, setClientUrl] = useState(null);
 
     useEffect(() => {
         if (user && user.role === 'admin') {
@@ -55,6 +56,9 @@ const FileUpload = () => {
                 } else {
                     // For guests, just show the system max file size
                     setEffectiveMaxFileSizeMB(systemMaxMB);
+                }
+                if (res.data.clientUrl) {
+                    setClientUrl(res.data.clientUrl);
                 }
             } catch (err) {
                 console.error("Could not fetch server config", err);
@@ -140,7 +144,8 @@ const FileUpload = () => {
             setMessage('Upload successful!');
             setTimeout(() => setUploadProgress(0), 1500);
 
-            const link = `${window.location.origin}/download/${res.data.uuid}`;
+            const baseUrl = clientUrl || window.location.origin;
+            const link = `${baseUrl}/download/${res.data.uuid}`;
             setDownloadLink(link);
             setFile(null);
 

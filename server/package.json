@@ -7,6 +7,7 @@
     "test": "cross-env NODE_ENV=test VALKEY_URL=redis://localhost:6379 MONGO_URI=mongodb://localhost:27017/byteporter_test jest --detectOpenHandles --runInBand",
     "start": "cross-env VALKEY_URL=redis://localhost:6379 MONGO_URI=mongodb://localhost:27017/byteporter nodemon server.js",
     "dev": "cross-env VALKEY_URL=redis://localhost:6379 MONGO_URI=mongodb://localhost:27017/byteporter nodemon server.js",
+    "docker": "nodemon server.js",
     "verify": "cross-env VALKEY_URL=redis://localhost:6379 MONGO_URI=mongodb://localhost:27017/byteporter node scripts/verify_connections.js",
     "reset": "cross-env VALKEY_URL=redis://localhost:6379 MONGO_URI=mongodb://localhost:27017/byteporter node scripts/reset.js"
   },

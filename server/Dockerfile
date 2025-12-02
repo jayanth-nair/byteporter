@@ -15,4 +15,4 @@ USER node
 
 EXPOSE 5000
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "docker"]
