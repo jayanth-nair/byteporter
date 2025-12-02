@@ -1,0 +1,185 @@
+/* src/components/FileUpload.css */
+.upload-container {
+  background-color: var(--md-sys-color-surface);
+  padding: 48px;
+  border-radius: var(--md-sys-shape-corner-extra-large);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  max-width: 90vw;
+  text-align: center;
+  color: var(--md-sys-color-on-surface);
+}
+
+.drop-zone {
+  border: 2px dashed var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-large);
+  padding: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--md-sys-color-surface-variant);
+}
+
+.drop-zone.dragging {
+  background-color: var(--md-sys-color-secondary-container);
+  border-color: var(--md-sys-color-secondary);
+}
+
+.drop-zone-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+  fill: var(--md-sys-color-primary);
+}
+
+.drop-zone p {
+  color: var(--md-sys-color-on-surface-variant);
+  margin: 0;
+  font: var(--md-sys-typescale-body-large);
+}
+
+.selected-file-name {
+  margin-top: 15px;
+  font: var(--md-sys-typescale-label-large);
+  color: var(--md-sys-color-primary);
+  word-break: break-all;
+}
+
+button {
+  /* Inherits from global button styles in index.css, just adding specific margins if needed */
+  margin: 10px;
+}
+
+.message {
+  margin-top: 20px;
+  color: var(--md-sys-color-tertiary);
+  min-height: 20px;
+  font: var(--md-sys-typescale-body-medium);
+}
+
+.link-container {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.link-container input {
+  flex-grow: 1;
+  /* Inherits global input styles */
+  min-width: 200px;
+}
+
+.options-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.option-label {
+  color: var(--md-sys-color-on-surface-variant);
+  margin-right: 10px;
+  font: var(--md-sys-typescale-label-large);
+}
+
+.expiration-select {
+  background-color: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface);
+  border: 1px solid transparent;
+  border-radius: var(--md-sys-shape-corner-medium);
+  padding: 16px 20px;
+  font: var(--md-sys-typescale-body-large);
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E6E1E5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+.expiration-select:focus {
+  outline: none;
+  border-bottom-color: var(--md-sys-color-primary);
+}
+
+.expiration-select option {
+  background-color: #1E1E2E;
+  /* Solid dark background for options */
+  color: #E6E1E5;
+}
+
+.progress-bar-container {
+  width: 100%;
+  background-color: var(--md-sys-color-surface-variant);
+  border-radius: var(--md-sys-shape-corner-full);
+  overflow: hidden;
+
+  /* Animation State: Hidden */
+  height: 0;
+  opacity: 0;
+  margin: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-bar-container.visible {
+  /* Animation State: Visible */
+  height: 8px;
+  opacity: 1;
+  margin: 20px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--md-sys-color-primary);
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+  /* Remove text inside for cleaner look */
+  color: transparent;
+}
+
+.view-once-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-input {
+  width: auto;
+  margin-right: 10px;
+}
+
+.max-size-text {
+  margin-top: 10px !important;
+  font-size: 0.8rem !important;
+  color: var(--md-sys-color-on-surface-variant);
+  opacity: 0.8;
+}
+
+.quota-text {
+  margin-top: 4px !important;
+  font-size: 0.8rem !important;
+  color: var(--md-sys-color-primary);
+  font-weight: 500;
+}
+
+.password-container {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.password-field-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}

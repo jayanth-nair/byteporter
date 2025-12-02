@@ -1,0 +1,72 @@
+/* src/components/DownloadPage.css */
+.download-container {
+  background-color: var(--md-sys-color-surface);
+  padding: 48px;
+  border-radius: var(--md-sys-shape-corner-extra-large);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  max-width: 90vw;
+  text-align: center;
+  color: var(--md-sys-color-on-surface);
+  margin: 50px auto;
+}
+
+.download-container h2 {
+  color: var(--md-sys-color-primary);
+  margin-bottom: 20px;
+}
+
+.download-container p {
+  margin: 10px 0;
+  font: var(--md-sys-typescale-body-large);
+}
+
+/* .password-input styles removed to inherit global input styles from index.css */
+
+.warning-box {
+  background-color: rgba(233, 69, 96, 0.1);
+  border: 1px solid var(--md-sys-color-error);
+  border-radius: 8px;
+  padding: 10px;
+  margin: 15px 0;
+  color: var(--md-sys-color-error);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.password-section {
+  margin: 20px 0;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-secondary {
+  background-color: var(--md-sys-color-secondary);
+  color: var(--md-sys-color-on-secondary);
+}
+
+.preview-container {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: 8px;
+}
+
+.preview-image {
+  max-width: 100%;
+  max-height: 500px;
+}
+
+.preview-text {
+  text-align: left;
+  background-color: var(--md-sys-color-surface-variant);
+  padding: 10px;
+  overflow: auto;
+  max-height: 400px;
+  color: var(--md-sys-color-on-surface-variant);
+}

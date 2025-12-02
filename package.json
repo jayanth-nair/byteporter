@@ -1,0 +1,23 @@
+{
+    "name": "byteporter-root",
+    "version": "1.0.0",
+    "description": "Root package for BytePorter monorepo management",
+    "private": true,
+    "scripts": {
+        "setup": "node setup.js",
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "server": "cd server && npm run dev",
+        "client": "cd client && npm start",
+        "start": "docker-compose up --build",
+        "stop": "docker-compose down",
+        "reset": "cd server && npm run reset",
+        "test": "cd server && npm test",
+        "verify": "cd server && npm run verify"
+    },
+    "devDependencies": {
+        "concurrently": "^9.1.0"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}

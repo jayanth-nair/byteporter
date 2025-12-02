@@ -1,0 +1,40 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test VALKEY_URL=redis://localhost:6379 MONGO_URI=mongodb://localhost:27017/byteporter_test jest --detectOpenHandles --runInBand",
+    "start": "cross-env VALKEY_URL=redis://localhost:6379 MONGO_URI=mongodb://localhost:27017/byteporter nodemon server.js",
+    "dev": "cross-env VALKEY_URL=redis://localhost:6379 MONGO_URI=mongodb://localhost:27017/byteporter nodemon server.js",
+    "verify": "cross-env VALKEY_URL=redis://localhost:6379 MONGO_URI=mongodb://localhost:27017/byteporter node scripts/verify_connections.js",
+    "reset": "cross-env VALKEY_URL=redis://localhost:6379 MONGO_URI=mongodb://localhost:27017/byteporter node scripts/reset.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@exortek/express-mongo-sanitize": "^1.1.1",
+    "bcryptjs": "^3.0.3",
+    "compression": "^1.8.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.2.1",
+    "express-xss-sanitizer": "^2.0.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^9.0.0",
+    "multer": "^2.0.2",
+    "redis": "^5.10.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^30.2.0",
+    "mongodb-memory-server": "^10.3.0",
+    "nodemon": "^3.1.11",
+    "supertest": "^7.1.4"
+  }
+}

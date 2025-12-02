@@ -1,0 +1,207 @@
+.App {
+  /* Background is now handled by body in index.css for the mesh gradient */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  color: var(--md-sys-color-on-background);
+  padding-top: 100px;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.App-header h1 {
+  font: var(--md-sys-typescale-display-large);
+  background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.App-header p {
+  font: var(--md-sys-typescale-headline-medium);
+  color: var(--md-sys-color-on-surface-variant);
+  margin-top: 8px;
+  font-weight: 300;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Auth Container (Login/Register/AdminSetup) - Centralized */
+.auth-container {
+  /* Glass Card Styles */
+  background: var(--glass-surface);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--md-sys-shape-corner-extra-large);
+
+  padding: 48px;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0 auto;
+  /* Center horizontally */
+  text-align: center;
+  color: var(--md-sys-color-on-surface);
+}
+
+.auth-container h2 {
+  font: var(--md-sys-typescale-headline-medium);
+  color: var(--md-sys-color-on-surface);
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+.auth-container p {
+  font: var(--md-sys-typescale-body-medium);
+  color: var(--md-sys-color-on-surface-variant);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.auth-form button[type="submit"] {
+  margin-top: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.form-group label {
+  font: var(--md-sys-typescale-label-large);
+  color: var(--md-sys-color-on-surface-variant);
+  margin-left: 4px;
+}
+
+.admin-warning-banner {
+  background: rgba(255, 180, 171, 0.15);
+  /* Translucent Error Container */
+  color: var(--md-sys-color-error);
+  border: 1px solid var(--md-sys-color-error);
+  padding: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  border-radius: var(--md-sys-shape-corner-medium);
+  backdrop-filter: blur(10px);
+}
+
+.admin-warning-banner a {
+  color: var(--md-sys-color-primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.admin-warning-banner a:hover {
+  text-decoration: underline;
+}
+
+.header-icon {
+  display: inline;
+  vertical-align: middle;
+  margin-left: 10px;
+  color: var(--md-sys-color-secondary);
+}
+
+/* Global Password Input Styles */
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+  display: block;
+  /* Changed from flex to block to avoid width issues */
+}
+
+.password-input {
+  width: 100%;
+  padding-right: 48px !important;
+  /* Space for icon */
+  box-sizing: border-box;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  /* Inside the input */
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.password-toggle-btn:hover {
+  color: var(--md-sys-color-primary);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.message {
+  color: var(--md-sys-color-error);
+  font: var(--md-sys-typescale-body-medium);
+  margin-top: 10px;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

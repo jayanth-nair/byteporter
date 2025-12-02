@@ -1,0 +1,103 @@
+.dashboard-container {
+    width: 800px;
+    max-width: 95vw;
+}
+
+.dashboard-container h2 {
+    color: var(--md-sys-color-on-background);
+    margin-bottom: 25px;
+    font: var(--md-sys-typescale-headline-medium);
+}
+
+.file-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.file-item {
+    background-color: var(--md-sys-color-surface);
+    border-radius: var(--md-sys-shape-corner-medium);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.file-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.file-details {
+    text-align: left;
+}
+
+.file-details .file-name {
+    font: var(--md-sys-typescale-title-medium);
+    color: var(--md-sys-color-on-surface);
+    word-break: break-all;
+}
+
+.file-details .file-meta {
+    font: var(--md-sys-typescale-body-small);
+    color: var(--md-sys-color-on-surface-variant);
+    margin-top: 5px;
+}
+
+.file-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.storage-info {
+    background-color: var(--md-sys-color-surface);
+    padding: 24px;
+    border-radius: var(--md-sys-shape-corner-large);
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.storage-info h3 {
+    margin-top: 0;
+    font: var(--md-sys-typescale-title-large);
+    color: var(--md-sys-color-on-surface);
+}
+
+.storage-bar-background {
+    background-color: var(--md-sys-color-surface-variant);
+    border-radius: var(--md-sys-shape-corner-full);
+    height: 12px;
+    width: 100%;
+    overflow: hidden;
+    margin: 16px 0;
+}
+
+.storage-bar-foreground {
+    background-color: var(--md-sys-color-primary);
+    height: 100%;
+    border-radius: var(--md-sys-shape-corner-full);
+    transition: width 0.5s ease-in-out;
+}
+
+.storage-info p {
+    margin-top: 8px;
+    color: var(--md-sys-color-on-surface-variant);
+    font: var(--md-sys-typescale-body-medium);
+}
+
+.delete-btn {
+    background-color: var(--md-sys-color-error-container);
+    color: var(--md-sys-color-on-error-container);
+}
+
+.delete-btn:hover {
+    background-color: var(--md-sys-color-error);
+    color: var(--md-sys-color-on-error);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
