@@ -1,6 +1,6 @@
 # BytePorter
 
-BytePorter is a secure, ephemeral file sharing service designed for simplicity and privacy. It allows users to upload files, set expiration times, and share secure links.
+BytePorter is a secure file sharing service designed for simplicity and privacy with user-controlled retention. It allows users to upload files, set custom expiration times, and share secure links.
 
 ## Features
 
