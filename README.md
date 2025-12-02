@@ -16,7 +16,7 @@ BytePorter is a secure file sharing service designed for simplicity and privacy 
 
 ## Tech Stack
 
--   **Frontend:** React, Tailwind CSS (via CSS variables/custom styles)
+-   **Frontend:** React, Custom CSS (CSS Variables & Glassmorphism)
 -   **Backend:** Node.js, Express
 -   **Database**: MongoDB (Mongoose)
 -   **Caching/Queue**: Valkey (Open Source Redis alternative)
@@ -117,11 +117,11 @@ MONGO_URI=mongodb://mongo:27017/byteporter
 # Docker: redis://valkey:6379
 # Local:  redis://localhost:6379
 VALKEY_URL=redis://valkey:6379
-
 JWT_SECRET=your_super_secret_jwt_key
 CLIENT_URL=http://localhost:3000
-STORAGE_QUOTA_MB=1024
+NODE_ENV=development
 MAX_FILE_SIZE_MB=972
+STORAGE_QUOTA_MB=1024
 ```
 
 ## API Endpoints
@@ -133,7 +133,8 @@ MAX_FILE_SIZE_MB=972
 ### Files
 -   `POST /api/upload` - Upload a file (Multipart)
 -   `GET /api/files/:uuid` - Get file metadata/download
--   `POST /api/files/:uuid/verify-password` - Verify password for protected files
+-   `POST /api/files/download/:uuid` - Download file (with password)
+-   `POST /api/files/preview/:uuid` - Preview file (with password)
 
 ### Admin
 -   `GET /api/admin/stats` - System statistics

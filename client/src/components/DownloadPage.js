@@ -78,6 +78,13 @@ const DownloadPage = () => {
     }, [previewContent, previewType]);
 
     const handlePreview = async () => {
+        // Toggle off if already showing
+        if (previewContent) {
+            setPreviewContent(null);
+            setPreviewType(null);
+            return;
+        }
+
         try {
             const response = await axios.post(`/api/files/preview/${uuid}`, {
                 password: password
@@ -111,7 +118,7 @@ const DownloadPage = () => {
     };
 
     const isPreviewable = fileInfo && !fileInfo.oneTimeDownload && (
-        fileInfo.name.match(/\.(jpg|jpeg|png|gif|webp|txt|md|json|js|css|html)$/i)
+        /\.(jpg|jpeg|png|gif|webp|txt|md|json|js|css|html)$/i.test(fileInfo.name)
     );
 
     return (
@@ -157,7 +164,7 @@ const DownloadPage = () => {
                         </button>
                         {isPreviewable && (
                             <button onClick={handlePreview} className="btn-secondary">
-                                Preview
+                                {previewContent ? 'Hide Preview' : 'Preview'}
                             </button>
                         )}
                     </div>
