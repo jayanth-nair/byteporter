@@ -62,6 +62,17 @@ BytePorter is a secure file sharing service designed for simplicity and privacy 
     ```
     *Wipes the database and uploads folder. Useful for a fresh start.*
 
+## Network Access (Wi-Fi)
+
+To access BytePorter from other devices on your network (e.g., phone, laptop):
+
+1.  Start the app (`npm start`).
+2.  Look for the **Network** message in the startup logs.
+3.  It will guide you to run `ip addr` to find your LAN IP (e.g., `192.168.1.100`).
+4.  Visit `http://<YOUR_LAN_IP>:3000` on your other device.
+
+*Note: The app automatically detects the correct URL for sharing links based on how you access it.*
+
 ## Verification
 
 To verify that your environment is correctly configured:
@@ -118,7 +129,7 @@ MONGO_URI=mongodb://mongo:27017/byteporter
 # Local:  redis://localhost:6379
 VALKEY_URL=redis://valkey:6379
 JWT_SECRET=your_super_secret_jwt_key
-CLIENT_URL=http://localhost:3000
+CLIENT_URL=http://localhost:3000 # Optional: Overrides auto-detection
 NODE_ENV=development
 MAX_FILE_SIZE_MB=972
 STORAGE_QUOTA_MB=1024
