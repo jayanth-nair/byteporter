@@ -82,9 +82,26 @@ app.use((err, req, res, next) => {
     });
 });
 
+const os = require('os');
+
+function getLocalIp() {
+    const interfaces = os.networkInterfaces();
+    for (const name of Object.keys(interfaces)) {
+        for (const iface of interfaces[name]) {
+            if (iface.family === 'IPv4' && !iface.internal) {
+                return iface.address;
+            }
+        }
+    }
+    return 'localhost';
+}
+
 if (require.main === module) {
     app.listen(PORT, () => {
-        console.log(`Server is running on http://localhost:${PORT}`);
+        const localIp = getLocalIp();
+        console.log(`\n🚀 Server is running!`);
+        console.log(`   Local:   http://localhost:${PORT}`);
+        console.log(`   Network: http://${localIp}:${PORT}\n`);
     });
 }
 
