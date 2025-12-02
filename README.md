@@ -7,7 +7,7 @@ BytePorter is a secure file sharing service designed for simplicity and privacy 
 -   **Secure File Uploads:** Files are stored securely with unique UUIDs.
 -   **Expiration Control:** Users can set file expiration times (e.g., 1 hour, 1 day).
 -   **Password Protection:** Optional password protection for shared files.
--   **One-Time Downloads:** "Burn on Access" functionality (file is deleted immediately upon access request to prevent race conditions).
+-   **One-Time Downloads:** "Burn on Access" functionality ensures files are permanently deleted the moment they are accessed, guaranteeing true single-use links.
 -   **File Previews:** Secure preview for images and text files (with strict CSP).
 -   **Admin Dashboard:** Manage users, files, and system configuration.
 -   **Dynamic Quotas:** Storage quotas managed by admin with atomic enforcement.
