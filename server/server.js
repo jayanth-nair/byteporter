@@ -82,26 +82,13 @@ app.use((err, req, res, next) => {
     });
 });
 
-const os = require('os');
-
-function getLocalIp() {
-    const interfaces = os.networkInterfaces();
-    for (const name of Object.keys(interfaces)) {
-        for (const iface of interfaces[name]) {
-            if (iface.family === 'IPv4' && !iface.internal) {
-                return iface.address;
-            }
-        }
-    }
-    return 'localhost';
-}
-
 if (require.main === module) {
     app.listen(PORT, () => {
-        const localIp = getLocalIp();
-        console.log(`\n🚀 Server is running!`);
-        console.log(`   Local:   http://localhost:${PORT}`);
-        console.log(`   Network: http://${localIp}:${PORT}\n`);
+        const clientPort = 3000; // Client is exposed on port 3000 in Docker
+        console.log(`\n🚀 BytePorter is running!`);
+        console.log(`   Local:   http://localhost:${clientPort}`);
+        console.log(`   Network: To access from other devices, run 'ip addr' to find your LAN IP`);
+        console.log(`            Then visit: http://<YOUR_LAN_IP>:${clientPort}\n`);
     });
 }
 
