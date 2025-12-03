@@ -13,7 +13,10 @@ router.get('/', async (req, res) => {
         res.json({
             maxFileSizeMB: Math.round(config.maxFileSize / (1024 * 1024)),
             defaultStorageQuotaMB: Math.round(config.defaultStorageQuota / (1024 * 1024)),
-            clientUrl: process.env.CLIENT_URL // Only send if explicitly set
+            // Only send clientUrl if it's set AND NOT localhost (to allow client-side auto-discovery)
+            clientUrl: (process.env.CLIENT_URL && !process.env.CLIENT_URL.includes('localhost') && !process.env.CLIENT_URL.includes('127.0.0.1'))
+                ? process.env.CLIENT_URL
+                : undefined
         });
     } catch (err) {
         console.error(err.message);
